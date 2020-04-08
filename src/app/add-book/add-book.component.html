@@ -1,0 +1,23 @@
+<div style="text-align:center; margin-top: 100px; ">
+  <mat-card style="margin-top:10px; width: 50%;">
+    <mat-card-content>
+      <mat-form-field class="example-full-width">
+        <mat-label>Book Name</mat-label>
+        <input #book matInput placeholder="Ex. XML schema">
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="example-full-width">
+        <mat-label>Author Name</mat-label>
+        <input #author matInput placeholder="Ex. XML schema">
+      </mat-form-field>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="warn" (click)="submit(book.value,author.value)">
+        <mat-icon>file_upload</mat-icon>
+        Add Book
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

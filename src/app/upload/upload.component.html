@@ -1,10 +1,19 @@
 <div style="text-align:center; margin-top: 100px; ">
     <mat-card style="margin-top:10px; width: 50%;">
       <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <mat-label>Topic</mat-label>
+          <input matInput placeholder="Ex. XML schema">
+        </mat-form-field>
+        <br/>
+        <mat-form-field class="example-full-width">
+          <mat-label>Keywords</mat-label>
+          <textarea matInput placeholder="Enter comma seperated keywords"></textarea>
+        </mat-form-field>
         <ul>
           <li *ngFor="let file of files">
             <mat-progress-bar [value]="file.progress"></mat-progress-bar>
-            <span id="file-label"></span>
+            <span id="file-label">{{file.data.name}}</span>
           </li>
         </ul>
       </mat-card-content>

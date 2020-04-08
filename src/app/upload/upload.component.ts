@@ -3,6 +3,7 @@ import { HttpEventType, HttpErrorResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { UploadService } from  '../upload.service';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-upload',
@@ -11,9 +12,10 @@ import { UploadService } from  '../upload.service';
 })
 export class UploadComponent implements OnInit {
   @ViewChild("fileUpload", {static: false}) fileUpload: ElementRef;files  = [];
-  constructor(private uploadService: UploadService) { }
-
+  constructor(private uploadService: UploadService,private route: ActivatedRoute) { }
+  id: string;
   ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id');
   }
 
   uploadFile(file) {

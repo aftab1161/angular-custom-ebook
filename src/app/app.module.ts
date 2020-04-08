@@ -11,12 +11,17 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import { AddBookComponent } from './add-book/add-book.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UploadComponent
+    UploadComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

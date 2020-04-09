@@ -1,11 +1,11 @@
 <button mat-button color="warn" (click)="onClick()">
   <mat-icon>add files</mat-icon>
-  Upload
+  Add files
 </button>
 <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
 
 <div style="text-align:center; margin-top: 100px; ">
-    <mat-card style="margin-top:10px; width: 50%;" *ngFor="let obj of files;let i=index;">
+    <mat-card style="margin-top:10px; width: 100%;" *ngFor="let obj of files;let i=index;">
       <mat-card-content>
         <span id="file-label">{{obj.data.name}}</span>
         <mat-progress-bar [value]="obj.progress"></mat-progress-bar>
@@ -13,14 +13,13 @@
           <mat-label>Topic</mat-label>
           <input matInput placeholder="Ex. XML schema" name="topic{{i}}" [(ngModel)]="obj.topic">
         </mat-form-field>
-        <br/>
         <mat-form-field class="example-full-width">
           <mat-label>Keywords</mat-label>
           <textarea matInput placeholder="Enter comma seperated keywords" name ="keyword{{i}}" [(ngModel)]="obj.keyword"></textarea>
         </mat-form-field>
         <button mat-button color="warn" (click)="onDelete(i)">
-          <mat-icon>add files</mat-icon>
-          Delete
+          <mat-icon>delete</mat-icon>
+
         </button>
 
 
@@ -30,6 +29,6 @@
 
 </div>
 <button mat-button color="warn" (click)="onUpload()" *ngIf="files.length!=0">
-  <mat-icon>add files</mat-icon>
+  <mat-icon>publish</mat-icon>
   Upload
 </button>

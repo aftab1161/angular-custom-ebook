@@ -64,16 +64,16 @@ export class UploadComponent implements OnInit {
         // this.part.
         this.files.push({ data: file, inProgress: false, progress: 0,keyword:"",topic:""});
       }
-      this.uploadFiles();
+
     };
     fileUpload.click();
   }
 
   onDelete(i: number) {
-    this.files.splice(i);
+    this.files.splice(i,i);
   }
 
   onUpload() {
-
+    this.uploadFiles();
   }
 }

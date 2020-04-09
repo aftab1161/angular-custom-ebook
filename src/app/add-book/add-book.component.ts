@@ -23,10 +23,10 @@ export class AddBookComponent {
       catchError((error: HttpErrorResponse) => {
         return of(`${book} upload failed.`);
       })).subscribe((event: any) => {
-      if (typeof (event) === 'object') {
+      // if (typeof (event) === 'object') {
         console.log(event.body);
-        this.router.navigate(['/upload',event.id]);
-      }
+        this.router.navigate(['/upload',event.body]);
+      // }
     });
   }
 

@@ -6,7 +6,8 @@ import { map } from  'rxjs/operators';
   providedIn: 'root'
 })
 export class UploadService {
-  SERVER_URL: string = "https://file.io/";
+  // SERVER_URL: string = "https://file.io/";
+  SERVER_URL: string = 'http://localhost:8091/upload';
   constructor(private httpClient: HttpClient) { }
 
   public upload(formData) {

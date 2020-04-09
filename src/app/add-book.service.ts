@@ -26,12 +26,15 @@ export class AddBookService {
 
   public add(book,author) {
     let newBook = new Book(book,author);
+    const httpOptions : { headers; observe; }= {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': 'my-auth-token'
+      }),
+      observe : 'response'
+    };
 
-
-    return this.httpClient.post<any>(this.url, JSON.stringify(newBook), {
-      reportProgress: true,
-      observe: 'events'
-    });
+    return this.httpClient.post<any>(this.url, JSON.stringify(newBook), httpOptions);
   }
 
 

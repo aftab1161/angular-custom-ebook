@@ -23,6 +23,10 @@ export class UploadComponent implements OnInit {
   uploadFile(file) {
     const formData = new FormData();
     formData.append('file', file.data); // file is the key in json
+    formData.append("topic",file.topic);
+    formData.append("keywords",file.keyword);
+    formData.append("id",this.id);
+
     file.inProgress = true;
     this.uploadService.upload(formData).pipe(
       map(event => {

@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { UploadService } from  '../upload.service';
 import {ActivatedRoute} from "@angular/router";
+import { PartModal } from "../modal/part.modal";
 
 @Component({
   selector: 'app-upload',
@@ -12,6 +13,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class UploadComponent implements OnInit {
   @ViewChild("fileUpload", {static: false}) fileUpload: ElementRef;files  = [];
+  part = new PartModal();
   constructor(private uploadService: UploadService,private route: ActivatedRoute) { }
   id: string;
   ngOnInit(): void {

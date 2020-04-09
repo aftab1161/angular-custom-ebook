@@ -25,7 +25,7 @@ export class AddBookComponent {
       })).subscribe((event: any) => {
       if (typeof (event) === 'object') {
         console.log(event.body);
-        this.router.navigate(['/addBook',event.id]);
+        this.router.navigate(['/upload',event.id]);
       }
     });
   }

@@ -1,28 +1,25 @@
+<button mat-button color="warn" (click)="onClick()">
+  <mat-icon>add files</mat-icon>
+  Upload
+</button>
+
 <div style="text-align:center; margin-top: 100px; ">
-    <mat-card style="margin-top:10px; width: 50%;">
+    <mat-card style="margin-top:10px; width: 50%;" *ngFor="let file of files">
       <mat-card-content>
         <mat-form-field class="example-full-width">
           <mat-label>Topic</mat-label>
-          <input matInput placeholder="Ex. XML schema">
+          <input matInput placeholder="Ex. XML schema" name="topic" [(ngModel)]="part.topic">
         </mat-form-field>
         <br/>
         <mat-form-field class="example-full-width">
           <mat-label>Keywords</mat-label>
-          <textarea matInput placeholder="Enter comma seperated keywords"></textarea>
+          <textarea matInput placeholder="Enter comma seperated keywords" name ="keyword" [(ngModel)]="part.keyword"></textarea>
         </mat-form-field>
-        <ul>
-          <li *ngFor="let file of files">
-            <mat-progress-bar [value]="file.progress"></mat-progress-bar>
-            <span id="file-label">{{file.data.name}}</span>
-          </li>
-        </ul>
+
+        <mat-progress-bar [value]="part.doc.progress"></mat-progress-bar>
+        <span id="file-label">{{part.doc.data.name}}</span>
+
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-button color="warn" (click)="onClick()">
-          <mat-icon>file_upload</mat-icon>
-          Upload
-        </button>
-      </mat-card-actions>
     </mat-card>
     <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="image/*" style="display:none;" />
 </div>

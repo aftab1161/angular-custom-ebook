@@ -57,11 +57,23 @@ export class UploadComponent implements OnInit {
       for (let index = 0; index < fileUpload.files.length; index++)
       {
         const file = fileUpload.files[index];
-        this.files.push({ data: file, inProgress: false, progress: 0});
+        // this.part = new PartModal();
+        // this.part.data = file;
+        // this.part.keyword="";
+        // this.part.topic = "";
+        // this.part.
+        this.files.push({ data: file, inProgress: false, progress: 0,keyword:"",topic:""});
       }
       this.uploadFiles();
     };
     fileUpload.click();
   }
 
+  onDelete(i: number) {
+    this.files.splice(i);
+  }
+
+  onUpload() {
+
+  }
 }

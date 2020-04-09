@@ -1,5 +1,7 @@
 export class PartModal {
-  doc:any;
+  data:any;
+  inProgress : any;
+  progress: any;
   topic:any;
   keyword:any;
   // constructor(){}

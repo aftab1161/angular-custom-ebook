@@ -20,7 +20,7 @@ export class AddBookService {
 
 
 
-  // URL to web api
+
   constructor(private httpClient: HttpClient){
   }
 

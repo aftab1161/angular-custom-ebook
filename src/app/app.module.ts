@@ -15,13 +15,16 @@ import {MatInputModule} from '@angular/material/input';
 import { AddBookComponent } from './add-book/add-book.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { SearchComponent } from './search/search.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     UploadComponent,
-    AddBookComponent
+    AddBookComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

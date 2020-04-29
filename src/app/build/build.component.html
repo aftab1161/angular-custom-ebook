@@ -1,0 +1,11 @@
+<button mat-button color="warn" (click)="onDownload()">
+  <mat-icon>get_app</mat-icon>
+  Download
+</button>
+<mat-slide-toggle [(ngModel)]="toc">Include Table of contents</mat-slide-toggle>
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let obj of selected" cdkDrag>
+    <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+    {{obj.component_name}}
+  </div>
+</div>

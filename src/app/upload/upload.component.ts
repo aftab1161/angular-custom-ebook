@@ -71,6 +71,7 @@ export class UploadComponent implements OnInit {
 
     };
     fileUpload.click();
+
   }
 
   onDelete(i: number) {

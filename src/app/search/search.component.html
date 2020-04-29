@@ -12,13 +12,15 @@
 <div style=" margin-top: 40px; ">
   <mat-card style="margin-top:10px; width: 100%;" *ngFor="let obj of components;let i=index;">
     <mat-card-content>
-      <mat-checkbox class="example-margin" [(ngModel)]="obj.selected">Checked</mat-checkbox>
-      <span id="file-label">{{obj.name}}</span>
+      <mat-checkbox class="example-margin" [(ngModel)]="obj.isSelected"></mat-checkbox>
+      <span id="file-label">{{obj.component_name}}</span>
     </mat-card-content>
   </mat-card>
 
 </div>
-<button mat-button color="warn" (click)="onDownload()">
-  <mat-icon>get_app</mat-icon>
-  Download
+<a #link [href]="url" style="display: none"></a>
+<button mat-button color="warn" (click)="onBuild()">
+  <mat-icon>build</mat-icon>
+  Build
 </button>
+

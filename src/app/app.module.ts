@@ -17,6 +17,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { BuildComponent } from './build/build.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 
 @NgModule({
@@ -24,7 +27,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     AppComponent,
     UploadComponent,
     AddBookComponent,
-    SearchComponent
+    SearchComponent,
+    BuildComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +44,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatFormFieldModule,
     ReactiveFormsModule,
     FormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    DragDropModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,10 +10,20 @@
         <mat-label>Author Name</mat-label>
         <input #author matInput placeholder="Ex. XML schema">
       </mat-form-field>
+      <br/>
+      <mat-form-field class="example-full-width">
+        <mat-label>ISBN</mat-label>
+        <input #isbn matInput >
+      </mat-form-field>
+      <br/>
+      <mat-form-field class="example-full-width">
+        <mat-label>Publisher</mat-label>
+        <input #publisher matInput >
+      </mat-form-field>
 
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button color="warn" (click)="submit(book.value,author.value)">
+      <button mat-button color="warn" (click)="submit(book.value,author.value,isbn.value,publisher.value)">
         <mat-icon>file_upload</mat-icon>
         Add Book
       </button>

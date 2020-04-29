@@ -6,9 +6,13 @@ import {tap} from "rxjs/operators";
 class Book {
   book_name: string;
   author_name: string;
-  constructor(book: string, author: string) {
+  ISBN: string;
+  publisher: string;
+  constructor(book: string, author: string, isbn: string, publisher: string) {
     this.book_name = book;
     this.author_name = author;
+    this.ISBN = isbn;
+    this.publisher = publisher;
   }
 }
 
@@ -24,8 +28,8 @@ export class AddBookService {
   constructor(private httpClient: HttpClient){
   }
 
-  public add(book,author) {
-    let newBook = new Book(book,author);
+  public add(book,author,isbn,publisher) {
+    let newBook = new Book(book,author,isbn,publisher);
     const httpOptions : { headers; observe; }= {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',

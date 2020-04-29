@@ -21,7 +21,8 @@ export class DownloadService {
         ids: ids,
         toc: this.t
       },
-      observe: 'response'
+      observe: 'response',
+      responseType: 'text'
     });
   }
 

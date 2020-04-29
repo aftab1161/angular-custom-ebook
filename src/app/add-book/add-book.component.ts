@@ -14,9 +14,9 @@ import {Router} from "@angular/router";
 export class AddBookComponent {
   constructor(private addBookService: AddBookService,private router: Router) { }
 
-  submit(book, author) {
+  submit(book, author, isbn: string, publisher: string) {
 
-    this.addBookService.add(book,author).pipe(
+    this.addBookService.add(book,author,isbn,publisher).pipe(
       map(event => {
         return event;
       }),

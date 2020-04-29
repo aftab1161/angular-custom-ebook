@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {DownloadService} from "../download.service";
 import {ActivatedRoute} from "@angular/router";
 import {CdkDragDrop, moveItemInArray} from "@angular/cdk/drag-drop";
 import {SharedDataService} from "../shared-data.service";
+import {HttpParams} from "@angular/common/http";
 
 @Component({
   selector: 'app-build',
@@ -10,10 +11,11 @@ import {SharedDataService} from "../shared-data.service";
   styleUrls: ['./build.component.css']
 })
 export class BuildComponent implements OnInit {
+  @ViewChild("a", {static: false}) aLink: ElementRef;
   public selected: any;
   public ids: string;
   public toc: any;
-  public downloadLink: any;
+  public downloadLink:string;
 
   constructor(private downloadService: DownloadService,private route: ActivatedRoute,private sharedData: SharedDataService) { }
 
@@ -30,10 +32,26 @@ export class BuildComponent implements OnInit {
          this.ids = this.ids + value.id +',';
     });
     this.ids = this.ids.slice(0,this.ids.length-1);
-    this.downloadService.download(this.ids,this.toc).subscribe((event: any) => {
-      console.log(event);
-      this.downloadLink = event.body;
-    });
+    ///
+    let httpParams = new HttpParams();
+    httpParams = httpParams.append('ids', this.ids);
+    if(this.toc){
+      httpParams = httpParams.append('toc', '1');
+    }else {
+      httpParams = httpParams.append('toc', '0');
+    }
+
+    //console.log(httpParams.toString());
+    this.downloadLink = 'localhost:8091/file?';
+    this.downloadLink = this.downloadLink + httpParams.toString();
+    //
+    // this.downloadService.download(this.ids,this.toc).subscribe((event: any) => {
+    //   console.log(event.body);
+    //   this.downloadLink = event;
+    // });
+    // this.aLink.nativeElement.click();
+    console.log(this.downloadLink);
+    window.open(this.downloadLink);
   }
 
 

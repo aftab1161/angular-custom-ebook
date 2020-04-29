@@ -2,6 +2,7 @@
   <mat-icon>get_app</mat-icon>
   Download
 </button>
+<a #a [href]="downloadLink" style="display: none"></a>
 <mat-slide-toggle [(ngModel)]="toc">Include Table of contents</mat-slide-toggle>
 <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
   <div class="example-box" *ngFor="let obj of selected" cdkDrag>

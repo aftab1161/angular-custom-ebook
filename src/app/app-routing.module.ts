@@ -7,7 +7,7 @@ import {BuildComponent} from "./build/build.component";
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'addBook', pathMatch: 'full'},
+  { path: '', redirectTo: 'search', pathMatch: 'full'},
   { path: 'upload/:id', component: UploadComponent },
   { path: 'addBook', component: AddBookComponent },
   { path: 'search', component: SearchComponent },

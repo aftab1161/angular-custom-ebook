@@ -49,23 +49,11 @@ export class BuildComponent implements OnInit {
     //   console.log(event.body);
     //   this.downloadLink = event;
     // });
-    // this.aLink.nativeElement.click();
-    console.log(this.downloadLink);
+    //this.aLink.nativeElement.click();
+    //console.log(this.downloadLink);
     window.open(this.downloadLink);
   }
 
-
-  movies = [
-    'Episode I - The Phantom Menace',
-    'Episode II - Attack of the Clones',
-    'Episode III - Revenge of the Sith',
-    'Episode IV - A New Hope',
-    'Episode V - The Empire Strikes Back',
-    'Episode VI - Return of the Jedi',
-    'Episode VII - The Force Awakens',
-    'Episode VIII - The Last Jedi',
-    'Episode IX – The Rise of Skywalker'
-  ];
 
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.selected, event.previousIndex, event.currentIndex);

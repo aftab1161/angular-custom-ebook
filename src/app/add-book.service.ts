@@ -6,12 +6,12 @@ import {tap} from "rxjs/operators";
 class Book {
   book_name: string;
   author_name: string;
-  ISBN: string;
+  isbn: string;
   publisher: string;
   constructor(book: string, author: string, isbn: string, publisher: string) {
     this.book_name = book;
     this.author_name = author;
-    this.ISBN = isbn;
+    this.isbn = isbn;
     this.publisher = publisher;
   }
 }
